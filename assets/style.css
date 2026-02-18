@@ -1,0 +1,11 @@
+body {
+  font-family: 'Tajawal', Arial, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+.home {
+  text-align: center;
+  margin-top: 50px;
+}

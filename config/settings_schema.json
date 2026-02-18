@@ -1,0 +1,13 @@
+[
+  {
+    "name": "الألوان الأساسية",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "اللون الأساسي",
+        "default": "#007bff"
+      }
+    ]
+  }
+]

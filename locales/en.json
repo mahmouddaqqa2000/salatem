@@ -1,4 +1,9 @@
 {
+  "showcase.play": "Play video",
+  "showcase.pause": "Pause video",
+  "showcase.before": "Before",
+  "showcase.after": "After",
+  "showcase.compare": "Compare the two images",
   "pages.cart.total": "Total",
   "pages.cart.empty": "Your cart is empty",
   "pages.cart.continue_shopping": "Continue Shopping",

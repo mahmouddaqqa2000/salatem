@@ -473,6 +473,15 @@
       "required": false,
       "value": false,
       "selected": false
+    },
+    {
+      "id": "showcase_announcement",
+      "type": "string",
+      "format": "text",
+      "label": "إعلان أعلى واجهة الفيديو",
+      "required": false,
+      "multilanguage": true,
+      "value": null
     }
   ],
   "components": [
@@ -2256,6 +2265,249 @@
           "searchable": true,
           "minLength": 1,
           "maxLength": 10
+        }
+      ]
+    },
+    {
+      "key": "4d0a5518-761c-4bdf-a326-fb7857539932",
+      "path": "home.showcase-hero",
+      "title": {
+        "ar": "واجهة فيديو كاملة",
+        "en": "Full-width video hero"
+      },
+      "icon": "sicon-image",
+      "is_default": false,
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "format": "textarea",
+          "label": "الوصف",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "button",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الزر",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "image",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الصورة",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "video",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الفيديو MP4",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "mobile_video",
+          "type": "string",
+          "format": "text",
+          "label": "رابط فيديو الجوال MP4",
+          "multilanguage": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b",
+      "path": "home.showcase-section",
+      "title": {
+        "ar": "قسم عرض ومجموعات",
+        "en": "Campaign and collection section"
+      },
+      "icon": "sicon-image",
+      "is_default": false,
+      "fields": [
+        {
+          "id": "layout",
+          "type": "items",
+          "format": "dropdown-list",
+          "label": "التوزيع",
+          "required": true,
+          "multichoice": false,
+          "options": [
+            {
+              "key": "grid",
+              "value": "grid",
+              "label": "شبكة"
+            },
+            {
+              "key": "round",
+              "value": "round",
+              "label": "أقسام دائرية"
+            },
+            {
+              "key": "brands",
+              "value": "brands",
+              "label": "شريط العلامات"
+            },
+            {
+              "key": "rail",
+              "value": "rail",
+              "label": "معرض أفقي"
+            },
+            {
+              "key": "split",
+              "value": "split",
+              "label": "صورة ونص"
+            },
+            {
+              "key": "feature",
+              "value": "feature",
+              "label": "بانر عريض"
+            },
+            {
+              "key": "strip",
+              "value": "strip",
+              "label": "شريط إعلاني"
+            },
+            {
+              "key": "compare",
+              "value": "compare",
+              "label": "مقارنة صور"
+            },
+            {
+              "key": "faq",
+              "value": "faq",
+              "label": "أسئلة شائعة"
+            }
+          ],
+          "selected": [
+            {
+              "key": "grid",
+              "value": "grid",
+              "label": "شبكة"
+            }
+          ]
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "format": "textarea",
+          "label": "الوصف",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "button",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الزر",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "image",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الصورة",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "video",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الفيديو MP4",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "second_image",
+          "type": "string",
+          "format": "text",
+          "label": "رابط صورة المقارنة الثانية",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "items",
+          "type": "collection",
+          "format": "collection",
+          "label": "العناصر",
+          "item_label": "عنصر",
+          "required": false,
+          "minLength": 0,
+          "maxLength": 24,
+          "value": [],
+          "fields": [
+            {
+              "id": "items.title",
+              "type": "string",
+              "format": "text",
+              "label": "العنوان",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "id": "items.description",
+              "type": "string",
+              "format": "textarea",
+              "label": "الوصف",
+              "multilanguage": true,
+              "required": false
+            },
+            {
+              "id": "items.image",
+              "type": "string",
+              "format": "text",
+              "label": "رابط الصورة",
+              "multilanguage": false,
+              "required": false
+            },
+            {
+              "id": "items.url",
+              "type": "string",
+              "format": "text",
+              "label": "الرابط",
+              "multilanguage": false,
+              "required": false
+            }
+          ]
         }
       ]
     }

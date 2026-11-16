@@ -1,0 +1,726 @@
+{
+  "enabled": true,
+  "settings": {
+    "showcase_announcement": "تسوّق أحدث المجموعات واكتشف العروض"
+  },
+  "layout": [
+    {
+      "id": "showcase-1",
+      "path": "showcase-hero",
+      "fields": {
+        "video": "https://cdn.selia-tech.com/videos/video-2026-06-14T22-42-34-275Z-6r6yoi.mp4",
+        "mobile_video": "https://cdn.selia-tech.com/videos/video-2026-06-14T22-43-57-118Z-daqn6z.mp4",
+        "image": "https://cdn.files.salla.network/other/1510890315/838851fd-7682-4de2-9f14-f48701b23d5a-original.webp",
+        "key": "4d0a5518-761c-4bdf-a326-fb7857539932"
+      }
+    },
+    {
+      "id": "showcase-2",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "strip",
+        "title": "اكتشف المجموعات الجديدة وعروض الموسم",
+        "url": "/offers",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-3",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "brands",
+        "title": "",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/PidVC7I8RU4U3b5I6K2kJSNU1zip8KOQ4L3w9RvM.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/cYP8vcU8VL9EZYQUYsgY19lHgIKIVruBQk6rqFZr.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/dOmwe7f4XXeShtRluYgj5uFU7ADDjoOxO5j2IvsQ.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/JPXMohuYEt9IepM4VatbIx9582b5kS6EOVs2Lgxz.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/PzBqEUFToeMjKKUZzP9WBdLfIDAGb8xiogjBgZT4.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/FlzTDqFXsgBsX96jskuyLkixzlBQ8lEX4uAZ873I.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/CdN6ReUxSuNyta0VPk3laKslmMNEMXQr6BwMMt47.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/GTm0M5mT2sOra4c4Tkjx1x4aYD3EyC36nsdm00S5.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/khkHjkKBodBBHLSxUw6RStl4wwY58SBvwkbIVLsE.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/RYfQzcKOEohopWStGC6L6ZAr7wR4LK8wOBM2PfOH.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/glYLHVP2PKBCJ0Z6T03JNad2j46S8UsDnnZZgXur.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/wI1qSxP018JfBnvPKTCUnEG72TfiufA3133rZpi9.png"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-4",
+      "path": "products-slider",
+      "fields": {
+        "products": {
+          "source": "latest"
+        },
+        "title": "مختارات تناسب ذوقك",
+        "limit": 8,
+        "isVertical": true
+      }
+    },
+    {
+      "id": "showcase-5",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "split",
+        "title": "حكاية المتجر",
+        "description": "اكتشف مجموعاتنا المختارة من الأزياء والعطور والإكسسوارات.",
+        "image": "https://cdn.salla.sa/form-builder/U5V59WvHHQNkDM4sRJr7m30E877mhzDvC87aydhh.jpg",
+        "button": "اقرأ المزيد",
+        "url": "/blog",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-6",
+      "path": "featured-products",
+      "fields": {
+        "title": "تسوّق حسب المجموعة",
+        "items": [
+          {
+            "name": "وصل حديثًا",
+            "type": "latest_products"
+          },
+          {
+            "name": "الأكثر طلبًا",
+            "type": "most_sales"
+          },
+          {
+            "name": "الأعلى تقييمًا",
+            "type": "top_rated_products"
+          }
+        ],
+        "key": "6a73e723-1357-43a3-ac70-de94a15280ef"
+      }
+    },
+    {
+      "id": "showcase-7",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "rail",
+        "title": "المجموعات بالفيديو",
+        "items": [
+          {
+            "image": "https://cdn.files.salla.network/homepage/1886435134/581c3288-56c2-4f64-ae0e-9506225820fd.webp",
+            "url": "https://www.youtube.com/shorts/wVwiIyIsbEM"
+          },
+          {
+            "image": "https://cdn.files.salla.network/homepage/1886435134/2495eec3-e6a9-4a42-85aa-bd79d9acf07f.webp",
+            "url": "https://www.youtube.com/shorts/Zg-lXl8AFbM"
+          },
+          {
+            "image": "https://cdn.files.salla.network/homepage/1886435134/3bf29ed7-9034-49f3-8fc7-eb8dc1bc5db8.webp",
+            "url": "https://www.youtube.com/shorts/3ILHHXq2ag8"
+          },
+          {
+            "image": "https://cdn.files.salla.network/homepage/1886435134/d734d8b7-dd5e-4975-a5dc-e1b225f93032.webp",
+            "url": "https://www.youtube.com/shorts/Es56nnqP7SQ"
+          },
+          {
+            "image": "https://cdn.files.salla.network/homepage/1886435134/ce628fba-fc11-42ec-9cc8-05dc6f05768b.webp",
+            "url": "https://www.youtube.com/shorts/YpmvWkQ2BT0"
+          },
+          {
+            "image": "https://cdn.files.salla.network/homepage/1886435134/1a33c036-bac1-447c-ac64-da1ab949a853.webp",
+            "url": "https://www.youtube.com/shorts/RWTkgNyylY0"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-8",
+      "path": "fixed-products",
+      "fields": {
+        "products": {
+          "source": "sales"
+        },
+        "title": "الأكثر مبيعًا",
+        "limit": 8,
+        "isVertical": true
+      }
+    },
+    {
+      "id": "showcase-9",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "عطور الموسم",
+        "video": "https://cdn.selia-tech.com/videos/osmaperfumes-com-ar-2026-07-30T08-20-32-437Z-5xdbz2.mp4",
+        "description": "اختبر مجموعة من الروائح لكل مناسبة.",
+        "button": "تصفح العروض",
+        "url": "/offers",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-10",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "grid",
+        "title": "اختيارات الموسم",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/v0dkCQy150pvJAAdxzilg0K3eXLmcF2IOnNrWURo.webp",
+            "title": "عطور"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/om8xhO8SrMVTBr9m3MwHFGdourdB8lOe1dYYiRal.webp",
+            "title": "أطفال"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/wrgpnKYN6tJbfuBbpwNxhXxW8VhP8UaouQHe660o.webp",
+            "title": "رجالي"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/NClP8MP7C2ehudhNEMau7pkKXH8vYc8kTQR3JTMh.webp",
+            "title": "نسائي"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/ATe90eiDARMzJ92hUex4GL2jecd38BhOOTKVTduZ.jpg",
+            "title": "مكياج"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-11",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "round",
+        "title": "تسوّق حسب القسم",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/eWPMrxWS9VGcxBdpzrW9rW8ncCSUydik1Txm3wf9.jpg",
+            "title": "أطفال"
+          },
+          {
+            "image": "https://cdn.selia-tech.com/images/placeholder.png",
+            "title": "عطور"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/Gzz5bMEx0osaxnkfVprgq1lRxmyJtKO4mS5gzpKl.jpg",
+            "title": "العناية بالشعر"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/7Xg3HngS3cl7n3Hsv7qiv9AnWZs9eUFJUXAg0uR6.jpg",
+            "title": "الأظافر"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/eZ4Jdyvn5pkISFWj1WbR1eBsCj3jVtoI5rKaD6xw.jpg",
+            "title": "العناية بالبشرة"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/EugeK6Rz9kdb6gJtYHRlZu8MdJpqEh5A5YbIT3a9.jpg",
+            "title": "العود"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/05Z72fR6Ujs4SP3EZqyW20ICY14QVmSPijPsIXbO.jpg",
+            "title": "بطاقات رقمية"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/3uh3OHZsvNF3zD9a1rWcGO7Uu2B3tr4pxh0KsXf1.png",
+            "title": "حقائب"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/bRpyzHk7yhMjGNUQeVIOA3hP77zLrloHRotcoC36.jpg",
+            "title": "أحذية"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/MECTWNr0ZdL4NCmAQ0UglpqF0Y24dB6olITtLpfa.jpg",
+            "title": "نظارات"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/qxFkctTKF7NhjrZEAIP3FnDTR1zqHlcIxSBybRDK.jpg",
+            "title": "ملابس"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/4KbPSzlRcbGDZ1Cgc4y78hS1yRNZuSxPsIeccN8F.jpg",
+            "title": "فساتين"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-12",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "عروض الموسم",
+        "image": "https://cdn.salla.sa/form-builder/YFa4VyEzR1IppKzgGgYeHqQMGU9mGmQfjpg2O1VY.jpg",
+        "button": "شاهد المجموعة",
+        "url": "/offers",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-13",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "compare",
+        "title": "قارن بين الصورتين",
+        "image": "https://cdn.salla.sa/form-builder/t8Od2ksn2HEokNQouuWNUkT8Wy6Oe1V2sTSQWSuz.jpg",
+        "second_image": "https://cdn.salla.sa/form-builder/SLqMgRak4K6fWj7ch97UDYQl5tH1SpoGEVCyzB4X.jpg",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-14",
+      "path": "products-slider",
+      "fields": {
+        "products": {
+          "source": "latest"
+        },
+        "title": "مجموعة العطور",
+        "limit": 8,
+        "isVertical": true
+      }
+    },
+    {
+      "id": "showcase-15",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "المجموعة الرجالية",
+        "image": "https://cdn.salla.sa/form-builder/qghYZoGj3mMkQngX41npGx6aO30Gqwlb210vHFhA.jpg",
+        "button": "عرض المنتجات",
+        "url": "/offers",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-16",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "grid",
+        "title": "دليل المجموعات",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/D7RY5Fy70MiaPRXs2w0dxgjQNUbmlvJMqTvtYQaa.jpg",
+            "title": "أزياء"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/m57m6WMQen3xdGAXSvvC1VwPIBRn0x6aG99z8Vfn.jpg",
+            "title": "إكسسوارات"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/Fwm7O4a4VhK5g7i7rIjDgXFMVIlTf9Wiz5GixAhv.jpg",
+            "title": "عناية"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-17",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "rail",
+        "title": "حملات الموسم",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/inA0x6HlS2sMC65JOKfUhyJfP8S66TSFwCRxB0zG.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/3klPqy8V8Y3WaMJU9G5BAHhTkPPeCSazsKzryn7m.png"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-18",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "grid",
+        "title": "",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/ZjHsdgzca46oJqIwV4vTDK60zkL9OZrz9wHZnWcz.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/pN2w71zXy3JiFDFGEBhpdmZPs1QalH4UcDWRnXgp.png"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-19",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "تفاصيل تكمل إطلالتك",
+        "image": "https://cdn.salla.sa/form-builder/U5V59WvHHQNkDM4sRJr7m30E877mhzDvC87aydhh.jpg",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-20",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "rail",
+        "title": "وصل حديثًا",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/U5V59WvHHQNkDM4sRJr7m30E877mhzDvC87aydhh.jpg",
+            "title": "ملابس الأطفال"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/ucfNsEuAsKWgJFs2EHz4TOeGr6zlR0pGghDo4j1P.jpg",
+            "title": "نظارات"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/MluhG8XvJsZ8rraWCHrEPQZdZWDyaN3g2H3qvjM9.jpg",
+            "title": "عطور"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/bnXkCQWJnTKWqFCCsyezC9CstoBmSQqNj1u9kzgj.jpg",
+            "title": "أحذية"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-21",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "strip",
+        "title": "اكتشف آخر العروض",
+        "url": "/offers",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-22",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "مختارات جديدة",
+        "image": "https://cdn.salla.sa/form-builder/IOqbTDw5ZRO3FUNl2YE198OWACvIF9aKiHwrQj7m.png",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-23",
+      "path": "products-slider",
+      "fields": {
+        "products": {
+          "source": "latest"
+        },
+        "title": "الإكسسوارات والعطور",
+        "limit": 8,
+        "isVertical": true
+      }
+    },
+    {
+      "id": "showcase-24",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "عروض مختارة",
+        "image": "https://cdn.salla.sa/form-builder/rNh6Pfm0X1NwMdBVRCIjfR2Q9OEXwVvppHuV9DaX.png",
+        "button": "عرض التفاصيل",
+        "url": "/offers",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-25",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "تعرّف على المجموعة الجديدة",
+        "image": "https://cdn.salla.sa/form-builder/uNmxg0AHI3E0ukP4CGGPxEUFekEUYDY7acBzNqgz.jpg",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-26",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "round",
+        "title": "الإلكترونيات",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/mtwyOhzDETuDdfRR169Zo4MoDkNxIL2xPHW70d1u.jpg",
+            "title": "جوالات"
+          },
+          {
+            "image": "https://cdn.selia-tech.com/images/placeholder.png",
+            "title": "أجهزة لوحية"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/v0BPzzEq7Z6Boc8D5v5q0NfWnRrD3ak9vG6kFbpD.jpg",
+            "title": "ساعات"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/JaVX77Y3AOJvbxVo6u1H4XlH7F8sbdL0y8Xe515u.jpg",
+            "title": "سماعات"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-27",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "rail",
+        "title": "أحدث الأجهزة",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/XBqlvAinuWlvXIBnMTFmGpKzwIXKgIhQ8GQu3EQ8.jpg",
+            "title": "هاتف ذكي"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/Q6mZkDehQUo1Zwv202fohGfqnDaDGgw65Ndzu8SO.jpg",
+            "title": "سماعات لاسلكية"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-28",
+      "path": "fixed-products",
+      "fields": {
+        "products": {
+          "source": "sales"
+        },
+        "title": "اختيار المتسوقين",
+        "limit": 8,
+        "isVertical": true
+      }
+    },
+    {
+      "id": "showcase-29",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "grid",
+        "title": "قسم الألعاب",
+        "items": [
+          {
+            "image": "https://cdn.salla.sa/form-builder/2mtv02jXsiGjLXyjq9GV4fq1AzMyH2UKQNLxH8kY.jpg"
+          },
+          {
+            "image": "https://cdn.selia-tech.com/images/placeholder.png"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/zpwiwtXbfladygua9tELCDS4axxz5Hg9HK2xyRFb.jpg"
+          },
+          {
+            "image": "https://cdn.salla.sa/form-builder/8oOWYJdkeqcPoTAmB1Mo4poRRf1g5BJwkbZR6D1l.jpg"
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-30",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "strip",
+        "title": "اكتشف جديد المتجر",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-31",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "خيارات إضافية للتسوق",
+        "image": "https://cdn.salla.sa/form-builder/4CLAEyA4auprhBsMAf1w63DAB2DQzcGtzKI207pd.jpg",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-32",
+      "path": "products-slider",
+      "fields": {
+        "products": {
+          "source": "top-rated"
+        },
+        "title": "منتجات تستحق المشاهدة",
+        "limit": 8,
+        "isVertical": true
+      }
+    },
+    {
+      "id": "showcase-33",
+      "path": "blog",
+      "fields": {
+        "title": "من المدونة",
+        "key": "f3372a16-2ec0-4345-b03f-867f443f628e"
+      }
+    },
+    {
+      "id": "showcase-34",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "faq",
+        "title": "الأسئلة الشائعة",
+        "items": [
+          {
+            "title": "أين أتابع حالة طلبي؟",
+            "description": "افتح صفحة الطلبات من حسابك للاطّلاع على آخر تحديث."
+          },
+          {
+            "title": "كيف أراجع تكلفة الشحن؟",
+            "description": "تظهر خيارات الشحن وتكلفتها عند إدخال عنوان التوصيل في صفحة الدفع."
+          },
+          {
+            "title": "كيف أتواصل مع المتجر؟",
+            "description": "استخدم وسائل التواصل الموجودة في أسفل الصفحة."
+          }
+        ],
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-35",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "feature",
+        "title": "اكتشف تشكيلتنا",
+        "image": "https://cdn.salla.sa/form-builder/1a8ZrwvZQga9x2Ucs8Kd34pwYhScohPJZgT7TRtl.png",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    },
+    {
+      "id": "showcase-36",
+      "path": "store-features",
+      "fields": {
+        "features": [
+          {
+            "icon": "sicon-store2",
+            "title": "تسوق آمن",
+            "description": "استمتع بتجربة آمنة وخصوصية تامة"
+          },
+          {
+            "icon": "sicon-shipping-fast",
+            "title": "خدمة العملاء",
+            "description": "تواصل معنا في أي وقت"
+          },
+          {
+            "icon": "sicon-fire",
+            "title": "شحن سريع",
+            "description": "استلم طلبك في وقت قياسي"
+          }
+        ],
+        "position": 1,
+        "key": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "showcase-37",
+      "path": "custom-testimonials",
+      "fields": {
+        "key": "541cc423-90c7-4230-8a33-a0342cfde4ad",
+        "items": [
+          {
+            "ar": {
+              "text": "العنبر الأصيل بخور تجربة رائعة، رائحة فخمة وملفتة للانتباه. أحببت اللمسة النهائية التي تتركها على الثوب، سأكرر الشراء بالتأكيد ️"
+            },
+            "name": "ندى الحسيني",
+            "stars": 5,
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_female.png",
+            "__hidden": "",
+            "text": "العنبر الأصيل بخور تجربة رائعة، رائحة فخمة وملفتة للانتباه. أحببت اللمسة النهائية التي تتركها على الثوب، سأكرر الشراء بالتأكيد ️"
+          },
+          {
+            "ar": {
+              "text": "المسك الأبيض بخور رائحته مميزة جدًا، خفيفة في البداية وتتطور لتصبح أكثر دفئًا مع مرور الوقت. أفضل عطر اشتريته هذا العا"
+            },
+            "name": "خالد الأحمد",
+            "stars": 5,
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+            "__hidden": "",
+            "text": "المسك الأبيض بخور رائحته مميزة جدًا، خفيفة في البداية وتتطور لتصبح أكثر دفئًا مع مرور الوقت. أفضل عطر اشتريته هذا العا"
+          },
+          {
+            "ar": {
+              "text": "بلو لافيرن بخور رائحته جميلة وملفتة، أحببت طريقة التعبئة ووضوح التفاصيل. سأوصي به لجميع أصدقائي الذين يحبون العطور الشرقية."
+            },
+            "name": "خالد المسعودي",
+            "stars": 5,
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+            "__hidden": "",
+            "text": "بلو لافيرن بخور رائحته جميلة وملفتة، أحببت طريقة التعبئة ووضوح التفاصيل. سأوصي به لجميع أصدقائي الذين يحبون العطور الشرقية."
+          },
+          {
+            "ar": {
+              "text": "العنبر الأصيل عطر فاخر ودرجته عالية جدًا، يبقى على الملابس لفترة طويلة. أحببت تجربتي الأولى وسأقوم بشراء المزيد من نفس الماركة.️"
+            },
+            "name": "عبدالعزيز اليامي",
+            "stars": 5,
+            "avatar": "https://cdn.assets.salla.network/prod/stores/themes/default/assets/images/avatar_male.png",
+            "__hidden": "",
+            "text": "العنبر الأصيل عطر فاخر ودرجته عالية جدًا، يبقى على الملابس لفترة طويلة. أحببت تجربتي الأولى وسأقوم بشراء المزيد من نفس الماركة.️"
+          },
+          {
+            "ar": {
+              "text": "العنبر الأصيل عطر فاخر ودرجته عالية جدًا، يبقى على الملابس لفترة طويلة. أحببت تجربتي الأولى وسأقوم بشراء المزيد من نفس الماركة."
+            },
+            "en": {
+              "text": ""
+            },
+            "name": "خالد الشهراني",
+            "stars": 5,
+            "avatar": "https://cdn.files.salla.network/other/1510890315/c2b6b4f5-4134-4b96-9072-bc73674417ab-original.webp",
+            "__hidden": false,
+            "text": "العنبر الأصيل عطر فاخر ودرجته عالية جدًا، يبقى على الملابس لفترة طويلة. أحببت تجربتي الأولى وسأقوم بشراء المزيد من نفس الماركة."
+          }
+        ],
+        "versions": null,
+        "channel_visibility": {
+          "desktop": true,
+          "mobile": true
+        }
+      }
+    },
+    {
+      "id": "showcase-38",
+      "path": "showcase-section",
+      "fields": {
+        "layout": "grid",
+        "title": "تواصل مع المتجر",
+        "description": "تجد قنوات التواصل وساعات العمل في بيانات المتجر أسفل الصفحة.",
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b"
+      }
+    }
+  ]
+}

@@ -1,4 +1,9 @@
 {
+  "showcase.play": "تشغيل الفيديو",
+  "showcase.pause": "إيقاف الفيديو",
+  "showcase.before": "قبل",
+  "showcase.after": "بعد",
+  "showcase.compare": "قارن بين الصورتين",
   "pages.cart.total": "الإجمالي",
   "pages.cart.empty": "السلة فارغة",
   "pages.cart.continue_shopping": "متابعة التسوق",

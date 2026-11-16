@@ -191,6 +191,10 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
   }, [isDefaultLayout, stickyEnabled, safeTop]);
 
   const searchLabel = t('blocks.header.search', 'Search');
+  const settings = theme?.settings;
+  const announcement = settings && 'showcase_announcement' in settings
+    ? settings.showcase_announcement
+    : undefined;
 
   return (
     <header
@@ -204,6 +208,9 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
       <HookSlot name="header:start" />
 
       <div className="site-header__ad">
+        {isHomePage && typeof announcement === 'string' && announcement.trim() && (
+          <div className="showcase-strip">{announcement}</div>
+        )}
         <PageAdvertisements />
       </div>
 

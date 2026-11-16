@@ -351,9 +351,14 @@ html.dark .app-inner:has(.showcase-block--hero) {
     justify-content: center;
     gap: 1rem;
 
-    > .s-product-card {
+    > .s-product-card,
+    > div > .s-product-card {
       flex: 0 0 calc((100% - 1rem) / 2);
       min-width: 0;
+
+      @media (min-width: 768px) {
+        flex-basis: calc((100% - 3rem) / 4);
+      }
     }
   }
 
@@ -389,7 +394,6 @@ html.dark .app-inner:has(.showcase-block--hero) {
   }
 
   @media (min-width: 768px) {
-    .s-block--fixed-products .s-products-list-vertical-cards > .s-product-card,
     .s-products-carousel__slide {
       flex-basis: calc((100% - 3rem) / 4);
     }
@@ -492,5 +496,39 @@ html.dark .app-inner:has(.showcase-block--hero) {
     .s-product-card-vertical .s-product-card-image:hover img {
       transform: scale(1.06);
     }
+  }
+}
+
+/* Keep the fixed grid aligned when the source photos have different proportions. */
+.app-inner.product-card-img--auto:has(.showcase-block--hero) #main-content
+  .s-block--fixed-products .s-product-card-vertical {
+  .s-product-card-image:has(img) {
+    position: relative;
+    display: block;
+    flex: 0 0 auto;
+    height: auto;
+    padding-bottom: 0;
+    aspect-ratio: 1;
+
+    > a {
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+
+    [style*='aspect-ratio'],
+    picture,
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .s-product-card-content {
+    flex: 1 1 auto;
   }
 }

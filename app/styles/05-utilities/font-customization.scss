@@ -1,5 +1,9 @@
+html:lang(ar) body {
+  --font-main: 'Cairo Variable', var(--font-ar, Arial), sans-serif;
+}
+
 body {
-  &.font-dinnextltarabic-regular {
+  &.font-dinnextltarabic-regular:not(:lang(ar)) {
     .btn--add-to-cart {
       padding-top: 0 !important;
       padding-bottom: 0 !important;

@@ -303,7 +303,7 @@ export const EnhancedSlider = memo(function EnhancedSlider({ data }: EnhancedSli
             // The slide's ratio lives in CSS (home-blocks.scss): taller on phones.
             <div key={index} className="swiper-slide w-full bg-dark relative">
               <div
-                className={`${slide.without_overlay ? '' : 'overlay-bg'} bg-cover bg-center absolute inset-0`}
+                className={`${slide.without_overlay ? '' : 'overlay-bg'} enhanced-slider__media bg-cover bg-center absolute inset-0`}
               >
                 {slide.image && (
                   <img
@@ -326,7 +326,7 @@ export const EnhancedSlider = memo(function EnhancedSlider({ data }: EnhancedSli
         <div className="enhanced-slider__poster" aria-hidden="true">
           <div className="swiper-slide w-full bg-dark relative">
             <div
-              className={`${first.without_overlay ? '' : 'overlay-bg'} absolute inset-0 overflow-hidden`}
+              className={`${first.without_overlay ? '' : 'overlay-bg'} enhanced-slider__media absolute inset-0 overflow-hidden`}
             >
               <img
                 {...slideImage(first.image)}

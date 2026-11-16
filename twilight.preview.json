@@ -1,7 +1,9 @@
 {
   "enabled": true,
   "settings": {
-    "showcase_announcement": "تسوّق أحدث المجموعات واكتشف العروض"
+    "showcase_announcement": "تسوّق أحدث المجموعات واكتشف العروض",
+    "product_card_layout": "vertical",
+    "vertical_fixed_products": true
   },
   "layout": [
     {
@@ -73,13 +75,13 @@
     },
     {
       "id": "showcase-4",
-      "path": "products-slider",
+      "path": "fixed-products",
       "fields": {
         "products": {
           "source": "latest"
         },
         "title": "مختارات تناسب ذوقك",
-        "limit": 8,
+        "limit": 4,
         "isVertical": true
       }
     },
@@ -115,7 +117,9 @@
             "type": "top_rated_products"
           }
         ],
-        "key": "6a73e723-1357-43a3-ac70-de94a15280ef"
+        "key": "6a73e723-1357-43a3-ac70-de94a15280ef",
+        "view_style": "tabs",
+        "is_slider": true
       }
     },
     {
@@ -161,7 +165,7 @@
           "source": "sales"
         },
         "title": "الأكثر مبيعًا",
-        "limit": 8,
+        "limit": 2,
         "isVertical": true
       }
     },

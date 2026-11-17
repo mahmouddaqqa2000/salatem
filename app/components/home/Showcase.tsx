@@ -77,9 +77,9 @@ function Comparison({ before, after }: { before: string; after: string }) {
   );
 }
 
-function ShowcaseCards({ items }: { items: ShowcaseItem[] }) {
+function ShowcaseCards({ items, duplicate = false }: { items: ShowcaseItem[]; duplicate?: boolean }) {
   return (
-    <ul className="showcase-cards">
+    <ul className="showcase-cards" aria-hidden={duplicate || undefined} inert={duplicate || undefined}>
       {items.map((item, index) => {
         const content = (
           <>
@@ -94,11 +94,30 @@ function ShowcaseCards({ items }: { items: ShowcaseItem[] }) {
         );
         return (
           <li key={`${item.image ?? item.title}-${index}`}>
-            {item.url ? <Link to={item.url}>{content}</Link> : content}
+            {item.url && !duplicate ? <Link to={item.url}>{content}</Link> : content}
           </li>
         );
       })}
     </ul>
+  );
+}
+
+function BrandMarquee({ items }: { items: ShowcaseItem[] }) {
+  const { t } = useTranslation();
+  const [paused, setPaused] = useState(false);
+
+  if (items.length < 2) return <ShowcaseCards items={items} />;
+
+  return (
+    <div className="showcase-brands" data-paused={paused}>
+      <div className="showcase-brands__track" dir="ltr">
+        <ShowcaseCards items={items} />
+        <ShowcaseCards items={items} duplicate />
+      </div>
+      <button type="button" className="showcase-brands__toggle" onClick={() => setPaused((value) => !value)}>
+        {paused ? t('showcase.brands_resume', 'Resume logos') : t('showcase.brands_pause', 'Pause logos')}
+      </button>
+    </div>
   );
 }
 
@@ -129,7 +148,9 @@ export function ShowcaseSection({ data }: { data: ShowcaseData }) {
       ) : data.image && <img className="showcase-section__image" src={data.image} alt="" loading="lazy" />}
       {layout === 'faq' ? items.map((item, index) => (
         <details key={`${item.title}-${index}`}><summary>{item.title}</summary><p>{item.description}</p></details>
-      )) : items.length > 0 && <ShowcaseCards items={items} />}
+      )) : layout === 'brands' && items.length > 0 ? (
+        <BrandMarquee items={items} />
+      ) : items.length > 0 && <ShowcaseCards items={items} />}
     </div>
   );
 }

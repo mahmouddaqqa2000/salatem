@@ -14,6 +14,7 @@ import {
 } from '../icons';
 
 interface MobileBottomBarProps {
+  catalogPreview?: boolean;
   /** Whether the shared nav drawer (opened from the header) is currently open. */
   navOpen: boolean;
   /** Open that same nav drawer — the Categories tab is just another trigger for it. */
@@ -318,6 +319,7 @@ function BarLink({
  * is lifted to sit above this one (see `04-components/product.scss`).
  */
 export function MobileBottomBar({
+  catalogPreview = false,
   navOpen,
   onOpenNav,
   onCloseNav,
@@ -389,7 +391,14 @@ export function MobileBottomBar({
             onClick={() => openTab('home')}
           />
 
-          {navHasContent && (
+          {catalogPreview ? (
+            <Link to="/collections/all"
+              className={`mobile-bottom-bar__item${path.startsWith('/collections/') ? ' is-active' : ''}`}
+              onClick={() => openTab('home')}>
+              <DashboardSquare01Icon aria-hidden="true" />
+              <span className="mobile-bottom-bar__label">{t('fragrance.families', 'Fragrance families')}</span>
+            </Link>
+          ) : navHasContent && (
             <button
               type="button"
               className={`mobile-bottom-bar__item${active === 'categories' ? ' is-active' : ''}`}

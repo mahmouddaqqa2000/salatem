@@ -490,6 +490,15 @@
       "label": "اسم المتجر في الترويسة",
       "required": false,
       "value": null
+    },
+    {
+      "id": "fragrance_preview",
+      "type": "boolean",
+      "format": "switch",
+      "label": "معاينة كتالوج سلاتم محليًا",
+      "required": false,
+      "value": false,
+      "selected": false
     }
   ],
   "components": [

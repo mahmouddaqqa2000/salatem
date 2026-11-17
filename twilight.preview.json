@@ -4,7 +4,8 @@
     "showcase_wordmark": "سلاتم",
     "showcase_announcement": "عطور سلاتم | المجموعة الأولى",
     "product_card_layout": "vertical",
-    "vertical_fixed_products": true
+    "vertical_fixed_products": true,
+    "fragrance_preview": true
   },
   "layout": [
     {

@@ -7,7 +7,7 @@ import { SallaCartSummary } from '@salla.sa/twilight-components-react/cart-summa
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { HookSlot } from '@salla.sa/twilight-theme-engine/hooks';
-import { Image } from '@salla.sa/twilight-theme-engine/common';
+import { Image, Link } from '@salla.sa/twilight-theme-engine/common';
 import { MapPinIcon, SearchIcon, ShoppingBagIcon } from '../icons';
 import { useAppSafeAreaTop } from '../../hooks/useAppSafeAreaTop';
 import { useNavHasContent } from '../../hooks/useNavHasContent';
@@ -110,11 +110,12 @@ function HeaderIntro({ isHomePage }: { isHomePage: boolean }) {
  * shares the same drawer). Left unset, the header owns the state itself.
  */
 interface HeaderProps {
+  catalogPreview?: boolean;
   navOpen?: boolean;
   onNavOpenChange?: (open: boolean) => void;
 }
 
-export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = {}) {
+export function Header({ catalogPreview = false, navOpen: navOpenProp, onNavOpenChange }: HeaderProps = {}) {
   const { store, theme } = useTwilight();
   const { t } = useTranslation();
   const isDefaultLayout = theme?.settings?.header_layout === 'default';
@@ -261,7 +262,7 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
               )}
             </div>
 
-            <a className="site-header__brand" href={store?.url || '/'}>
+            <a className="site-header__brand" href={catalogPreview ? '/' : store?.url || '/'}>
               {wordmark ? <span className="showcase-wordmark" aria-hidden="true">{wordmark}</span> : (
                 <Image src={store?.logo} alt="" priority width={140} height={48} />
               )}
@@ -275,7 +276,11 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
                 className="site-header__mainmenu"
                 aria-label={t('blocks.header.main_menu', 'Menu')}
               >
-                <HeaderMainMenu />
+                {catalogPreview ? (
+                  <Link className="fragrance-preview__nav" to="/collections/all">
+                    {t('fragrance.families', 'Fragrance families')}
+                  </Link>
+                ) : <HeaderMainMenu />}
               </nav>
             )}
 

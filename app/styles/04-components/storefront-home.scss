@@ -1,4 +1,4 @@
-html:lang(ar) .app-inner:has(.showcase-block--hero) {
+html:lang(ar) .app-inner:is(.fragrance-preview, :has(.showcase-block--hero)) {
   --font-main: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
   font-family: var(--font-main);
 }
@@ -635,8 +635,116 @@ html.dark .app-inner:has(.showcase-block--hero) {
   color: #fff9f2;
 }
 
+.fragrance-preview {
+  --color-primary: #674365;
+  --color-primary-reverse: #fff9f2;
+  background: #fbf7ef;
+  color: #291b2c;
+
+  &__nav {
+    align-self: center;
+    justify-self: center;
+    margin-inline: auto;
+    color: inherit;
+  }
+}
+
+.fragrance-catalog {
+  scroll-margin-block-start: 5rem;
+  display: grid;
+  gap: 1.25rem;
+  padding-block: clamp(1.5rem, 5vw, 4rem);
+
+  > :is(h1, h2) {
+    font-size: clamp(1.65rem, 4vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid #deceda;
+      border-radius: 99px;
+      color: #533653;
+    }
+
+    a[aria-current='page'] {
+      border-color: #674365;
+      background: #674365;
+      color: #fff9f2;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.625rem, 2vw, 1.25rem);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #e3d9cf;
+      border-radius: 0.8rem;
+      background: #fffdf9;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: grid;
+    gap: 0.25rem;
+    padding: clamp(0.65rem, 2vw, 1rem);
+    color: #291b2c;
+
+    h3 {
+      font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+      font-weight: 700;
+    }
+
+    p {
+      color: #64535e;
+      font-size: clamp(0.75rem, 2vw, 0.9rem);
+    }
+  }
+}
+
 @media (max-width: 640px) {
-  .showcase-hero > :is(img, video) {
-    object-position: 32% center;
+  .showcase-hero {
+    min-height: clamp(28rem, 80svh, 37rem);
+
+    &__copy {
+      padding-block-end: 4.5rem;
+    }
+
+    > :is(img, video) {
+      object-position: 16% center;
+    }
+  }
+
+  .fragrance-catalog {
+    padding-inline: 1rem;
+  }
+
+  .fragrance-preview .mobile-bottom-bar__inner {
+    background: #fffaf3;
   }
 }

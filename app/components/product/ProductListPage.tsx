@@ -21,6 +21,7 @@ import { Testimonials, useReorderButtons } from '@salla.sa/twilight-theme-engine
 import { product, parseNextPageToken } from '@salla.sa/twilight-theme-engine/api/product';
 import type { ProductListLoaderData } from '@salla.sa/twilight-theme-engine/routes/product-listing';
 import type { Product } from '@salla.sa/twilight-theme-engine/types';
+import { FragranceCatalog, useFragrancePreview } from './FragranceCatalog';
 import { ProductCard } from './ProductCard';
 import { useAppliedFilters } from '@salla.sa/twilight-theme-engine/routes/product-listing';
 import type { ProductListFilters } from '@salla.sa/twilight-theme-engine/api/product';
@@ -421,7 +422,12 @@ function CategoryTestimonials({ enabled }: { enabled: boolean }) {
  * persist in `localStorage`. Upgrade notes: `FORKS.md`.
  */
 
-export function ProductListPage({
+export function ProductListPage(data: ProductListLoaderData) {
+  const fragrancePreview = useFragrancePreview();
+  return fragrancePreview ? <FragranceCatalog /> : <StoreProductListPage {...data} />;
+}
+
+function StoreProductListPage({
   page,
   source,
   query,

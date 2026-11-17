@@ -1,3 +1,4 @@
+import { useFragrancePreview } from '../product/FragranceCatalog';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useRouterState } from '@tanstack/react-router';
@@ -127,6 +128,7 @@ function GlobalModals() {
 }
 
 export function ThemeLayout({ children }: ThemeLayoutProps) {
+  const fragrancePreview = useFragrancePreview();
   const { theme } = useTwilight();
   // Owned here so the header's nav drawer and the mobile bottom bar's Categories
   // tab drive the same slide-in panel.
@@ -167,11 +169,11 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
   return (
     <>
       <div
-        className={`app-inner flex flex-col min-h-full product-card-img--${imgRatio}${squarePhotos}`}
+        className={`app-inner flex flex-col min-h-full product-card-img--${imgRatio}${squarePhotos}${fragrancePreview ? ' fragrance-preview' : ''}`}
         suppressHydrationWarning
       >
-        <Header navOpen={navOpen} onNavOpenChange={setNavOpen} />
-        <MobilePageTitleBar />
+        <Header catalogPreview={fragrancePreview} navOpen={navOpen} onNavOpenChange={setNavOpen} />
+        {!(fragrancePreview && pathname.includes('/collections/')) && <MobilePageTitleBar />}
         <main id="main-content" className="flex-1">
           {children}
         </main>
@@ -181,6 +183,7 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
             waiting, React found their nodes, failed to hydrate (React #418) and dropped them. */}
         <Footer />
         <MobileBottomBar
+          catalogPreview={fragrancePreview}
           navOpen={navOpen}
           onOpenNav={() => setNavOpen(true)}
           onCloseNav={() => setNavOpen(false)}

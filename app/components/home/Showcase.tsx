@@ -1,6 +1,7 @@
 import { useId, useState } from 'react';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
+import { FragranceCatalog, useFragrancePreview } from '../product/FragranceCatalog';
 import { useMotionAllowed } from '../../hooks/useMotionAllowed';
 
 interface ShowcaseItem {
@@ -130,6 +131,8 @@ export function ShowcaseSection({ data }: { data: ShowcaseData }) {
   const layout = typeof data.layout === 'string'
     ? data.layout
     : data.layout?.[0]?.value ?? data.layout?.[0]?.key;
+  const fragrancePreview = useFragrancePreview();
+  if (fragrancePreview && data.anchor === 'salatem-collection') return <FragranceCatalog home />;
   const items = (data.items ?? []).filter((item) => item.title || item.description || item.image);
   if (!data.title && !data.description && !data.image && !data.video && !items.length) return null;
 

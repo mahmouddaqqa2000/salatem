@@ -482,9 +482,87 @@
       "required": false,
       "multilanguage": true,
       "value": null
+    },
+    {
+      "id": "showcase_wordmark",
+      "type": "string",
+      "format": "text",
+      "label": "اسم المتجر في الترويسة",
+      "required": false,
+      "value": null
     }
   ],
   "components": [
+    {
+      "key": "4d0a5518-761c-4bdf-a326-fb7857539932",
+      "path": "home.showcase-hero",
+      "title": {
+        "ar": "واجهة فيديو كاملة",
+        "en": "Full-width video hero"
+      },
+      "icon": "sicon-image",
+      "is_default": true,
+      "fields": [
+        {
+          "id": "title",
+          "type": "string",
+          "format": "text",
+          "label": "العنوان",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "format": "textarea",
+          "label": "الوصف",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "button",
+          "type": "string",
+          "format": "text",
+          "label": "نص الزر",
+          "multilanguage": true,
+          "required": false
+        },
+        {
+          "id": "url",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الزر",
+          "multilanguage": false,
+          "required": false
+        },
+        {
+          "id": "image",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الصورة",
+          "multilanguage": false,
+          "required": false,
+          "value": "/salatem/hero.jpg"
+        },
+        {
+          "id": "video",
+          "type": "string",
+          "format": "text",
+          "label": "رابط الفيديو MP4",
+          "multilanguage": false,
+          "required": false,
+          "value": "/salatem/hero.mp4"
+        },
+        {
+          "id": "mobile_video",
+          "type": "string",
+          "format": "text",
+          "label": "رابط فيديو الجوال MP4",
+          "multilanguage": false,
+          "required": false
+        }
+      ]
+    },
     {
       "key": "186b3f4f-25cf-4d3c-abca-cef7eed6f0ab",
       "title": {
@@ -2269,74 +2347,6 @@
       ]
     },
     {
-      "key": "4d0a5518-761c-4bdf-a326-fb7857539932",
-      "path": "home.showcase-hero",
-      "title": {
-        "ar": "واجهة فيديو كاملة",
-        "en": "Full-width video hero"
-      },
-      "icon": "sicon-image",
-      "is_default": false,
-      "fields": [
-        {
-          "id": "title",
-          "type": "string",
-          "format": "text",
-          "label": "العنوان",
-          "multilanguage": true,
-          "required": false
-        },
-        {
-          "id": "description",
-          "type": "string",
-          "format": "textarea",
-          "label": "الوصف",
-          "multilanguage": true,
-          "required": false
-        },
-        {
-          "id": "button",
-          "type": "string",
-          "format": "text",
-          "label": "نص الزر",
-          "multilanguage": true,
-          "required": false
-        },
-        {
-          "id": "url",
-          "type": "string",
-          "format": "text",
-          "label": "رابط الزر",
-          "multilanguage": false,
-          "required": false
-        },
-        {
-          "id": "image",
-          "type": "string",
-          "format": "text",
-          "label": "رابط الصورة",
-          "multilanguage": false,
-          "required": false
-        },
-        {
-          "id": "video",
-          "type": "string",
-          "format": "text",
-          "label": "رابط الفيديو MP4",
-          "multilanguage": false,
-          "required": false
-        },
-        {
-          "id": "mobile_video",
-          "type": "string",
-          "format": "text",
-          "label": "رابط فيديو الجوال MP4",
-          "multilanguage": false,
-          "required": false
-        }
-      ]
-    },
-    {
       "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b",
       "path": "home.showcase-section",
       "title": {
@@ -2508,13 +2518,20 @@
               "required": false
             }
           ]
+        },
+        {
+          "id": "anchor",
+          "type": "string",
+          "format": "text",
+          "label": "معرّف رابط القسم",
+          "required": false
         }
       ]
     }
   ],
   "support_url": "https://salla.com/",
   "description": {
-    "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
-    "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
+    "ar": "ثيم لمتاجر العطور يقدّم المجموعات حسب العائلات العطرية، مع واجهة فيديو ومعارض صور قابلة للتخصيص.",
+    "en": "A fragrance storefront theme with an editable video hero and galleries for scent collections."
   }
 }

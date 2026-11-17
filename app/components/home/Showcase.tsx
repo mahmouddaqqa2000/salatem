@@ -11,6 +11,7 @@ interface ShowcaseItem {
 }
 
 interface ShowcaseData {
+  anchor?: string;
   title?: string;
   description?: string;
   image?: string;
@@ -24,7 +25,11 @@ interface ShowcaseData {
 }
 
 function Action({ data }: { data: ShowcaseData }) {
-  return data.url && data.button ? <Link className="showcase-action" to={data.url}>{data.button}</Link> : null;
+  if (!data.url || !data.button) return null;
+  if (data.url.startsWith('#')) {
+    return <a className="showcase-action" href={data.url}>{data.button}</a>;
+  }
+  return <Link className="showcase-action" to={data.url}>{data.button}</Link>;
 }
 
 export function ShowcaseHero({ data }: { data: ShowcaseData }) {
@@ -133,7 +138,7 @@ export function ShowcaseSection({ data }: { data: ShowcaseData }) {
   }
 
   return (
-    <div className={`showcase-section showcase-section--${layout ?? 'grid'} container`}>
+    <div id={data.anchor || undefined} className={`showcase-section showcase-section--${layout ?? 'grid'} container`}>
       {(data.title || data.description || data.button) && (
         <div className="showcase-heading">
           {data.title && <h2>{data.title}</h2>}

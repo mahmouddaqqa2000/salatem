@@ -4,17 +4,17 @@ html:lang(ar) .app-inner:has(.showcase-block--hero) {
 }
 
 .app-inner:has(.showcase-block--hero) {
-  --showcase-bg: #fff;
-  --showcase-ink: #000;
-  --showcase-panel: #eee;
-  --showcase-gold: #d4a574;
-  --showcase-line: #f0f0f0;
+  --showcase-bg: #fbf7ef;
+  --showcase-ink: #291b2c;
+  --showcase-panel: #eee4d7;
+  --showcase-gold: #d7ae84;
+  --showcase-line: #e3d9cf;
   --showcase-card: #fff;
   --showcase-muted: #949494;
-  --color-primary: #d4a574;
-  --color-primary-dark: #ae7f4e;
-  --color-primary-light: #facb9a;
-  --color-primary-reverse: #552600;
+  --color-primary: #674365;
+  --color-primary-dark: #4d304d;
+  --color-primary-light: #efe1ec;
+  --color-primary-reverse: #fff9f2;
   background: var(--showcase-bg);
   color: var(--showcase-ink);
 
@@ -69,7 +69,7 @@ html:lang(ar) .app-inner:has(.showcase-block--hero) {
   }
 
   .store-footer {
-    background: #0e0f0f;
+    background: #291b2c;
     color: #fff;
   }
 }
@@ -89,7 +89,7 @@ html.dark .app-inner:has(.showcase-block--hero) {
   display: grid;
   align-content: end;
   min-height: clamp(30rem, 56vw, 56rem);
-  min-height: min(56rem, max(30rem, 94svh));
+  min-height: min(49rem, max(30rem, 88svh));
   overflow: hidden;
   background: #27201d;
   color: #fff;
@@ -108,7 +108,7 @@ html.dark .app-inner:has(.showcase-block--hero) {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, #100e0c80, transparent 48%, #100e0c62);
+    background: linear-gradient(180deg, #201622a6, transparent 38%, #201622db);
   }
 
   &__copy {
@@ -141,7 +141,7 @@ html.dark .app-inner:has(.showcase-block--hero) {
   place-items: center;
   min-height: 2.65rem;
   padding: 0.5rem 1rem;
-  background: #000;
+  background: #291b2c;
   color: #fff;
   text-align: center;
   font-size: 0.875rem;
@@ -602,5 +602,41 @@ html.dark .app-inner:has(.showcase-block--hero) {
       flex-wrap: wrap;
       animation: none;
     }
+  }
+}
+
+#salatem-collection {
+  scroll-margin-block-start: 5rem;
+
+  .showcase-cards li {
+    overflow: hidden;
+    border: 1px solid var(--showcase-line);
+    border-radius: 0.6rem;
+    background: var(--showcase-card);
+  }
+
+  .showcase-cards img {
+    aspect-ratio: 1;
+  }
+
+  .showcase-card__copy {
+    padding: 1rem;
+  }
+}
+
+.showcase-wordmark {
+  color: #533653;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.app-inner:has(.showcase-block--hero) .site-header__bar:not(.is-scrolled) .showcase-wordmark {
+  color: #fff9f2;
+}
+
+@media (max-width: 640px) {
+  .showcase-hero > :is(img, video) {
+    object-position: 32% center;
   }
 }

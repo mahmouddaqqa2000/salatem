@@ -195,6 +195,9 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
   const announcement = settings && 'showcase_announcement' in settings
     ? settings.showcase_announcement
     : undefined;
+  const wordmark = settings && 'showcase_wordmark' in settings && typeof settings.showcase_wordmark === 'string'
+    ? settings.showcase_wordmark.trim()
+    : '';
 
   return (
     <header
@@ -259,16 +262,12 @@ export function Header({ navOpen: navOpenProp, onNavOpenChange }: HeaderProps = 
             </div>
 
             <a className="site-header__brand" href={store?.url || '/'}>
-              <Image
-                src={store?.logo}
-                alt=""
-                priority
-                width={140}
-                height={48}
-              />
+              {wordmark ? <span className="showcase-wordmark" aria-hidden="true">{wordmark}</span> : (
+                <Image src={store?.logo} alt="" priority width={140} height={48} />
+              )}
               {/* With no intro row, the home page's only `<h1>` is the store name here,
                   as in the engine Header. */}
-              <BrandName className="sr-only">{store?.name || 'Store'}</BrandName>
+              <BrandName className="sr-only">{wordmark || store?.name || 'Store'}</BrandName>
             </a>
 
             {isDefaultLayout && (

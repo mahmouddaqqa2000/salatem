@@ -748,3 +748,64 @@ html.dark .app-inner:has(.showcase-block--hero) {
     background: #fffaf3;
   }
 }
+
+.fragrance-catalog__purchase {
+  display: grid;
+  gap: 0.5rem;
+  margin-block-start: auto;
+  padding: 0 0.75rem 0.75rem;
+
+  salla-add-product-button,
+  .s-button-wrap {
+    width: 100%;
+  }
+
+  .s-button-btn,
+  .fragrance-catalog__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    min-height: 2.875rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #674365;
+    border-radius: 0.65rem;
+    background: #674365;
+    color: #fff9f2;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 160ms ease, box-shadow 160ms ease;
+
+    &:hover {
+      background: #4d304d;
+      box-shadow: 0 4px 12px #67436526;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #674365;
+      outline-offset: 3px;
+    }
+  }
+
+  .s-button-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+  }
+}
+
+.fragrance-catalog__notice {
+  color: #64535e;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}

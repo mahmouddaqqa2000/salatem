@@ -1,3 +1,6 @@
+import { useId, useState } from 'react';
+import { SallaAddProductButton } from '@salla.sa/twilight-components-react/add-product-button';
+import { ShoppingBagIcon } from '../icons';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
@@ -26,6 +29,42 @@ export function useFragrancePreview() {
 export function fragranceFamilyName(family: string, locale: string | undefined) {
   const selected = families.find((entry) => entry.id === family) ?? families[0];
   return selected.name[locale === 'ar' || !locale ? 'ar' : 'en'];
+}
+
+function FragranceCartButton({ id, name }: { id: string; name: string }) {
+  const { t } = useTranslation();
+  const { theme } = useTwilight();
+  const [showNotice, setShowNotice] = useState(false);
+  const noticeId = useId();
+  const settings = theme?.settings as Record<string, unknown> | undefined;
+  const rawId = settings?.[`fragrance_product_${id}`];
+  const productId = typeof rawId === 'string' || typeof rawId === 'number' ? Number(rawId) : 0;
+  const label = t('fragrance.add_to_cart', 'Add to cart');
+
+  return (
+    <div className="fragrance-catalog__purchase">
+      {Number.isSafeInteger(productId) && productId > 0 ? (
+        <SallaAddProductButton productId={productId} productStatus="sale"
+          productType="product" quantity={1} width="wide" fill="solid">
+          <ShoppingBagIcon aria-hidden="true" />
+          <span>{label}</span>
+        </SallaAddProductButton>
+      ) : (
+        <button type="button" className="fragrance-catalog__add"
+          aria-label={`${label} — ${name}`}
+          aria-describedby={showNotice ? noticeId : undefined}
+          onClick={() => setShowNotice(true)}>
+          <ShoppingBagIcon aria-hidden="true" />
+          <span>{label}</span>
+        </button>
+      )}
+      {showNotice && (
+        <p id={noticeId} role="status" className="fragrance-catalog__notice">
+          {t('fragrance.link_required', 'This preview item needs to be linked to a Salla product before it can be purchased.')}
+        </p>
+      )}
+    </div>
+  );
 }
 
 export function FragranceCatalog({ family = 'all', home = false }: { family?: string; home?: boolean }) {
@@ -57,6 +96,7 @@ export function FragranceCatalog({ family = 'all', home = false }: { family?: st
               <h3>{item.name[language]}</h3>
               <p>{item.notes[language]}</p>
             </div>
+            <FragranceCartButton id={item.id} name={item.name[language]} />
           </li>
         ))}
       </ul>

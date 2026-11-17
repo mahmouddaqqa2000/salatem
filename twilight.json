@@ -499,6 +499,38 @@
       "required": false,
       "value": false,
       "selected": false
+    },
+    {
+      "id": "fragrance_product_oud",
+      "type": "string",
+      "format": "text",
+      "label": "رقم منتج ليل العود في سلة",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "fragrance_product_jasmine",
+      "type": "string",
+      "format": "text",
+      "label": "رقم منتج ياسمين السحر في سلة",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "fragrance_product_rose",
+      "type": "string",
+      "format": "text",
+      "label": "رقم منتج ورد الرمال في سلة",
+      "required": false,
+      "value": null
+    },
+    {
+      "id": "fragrance_product_bergamot",
+      "type": "string",
+      "format": "text",
+      "label": "رقم منتج برغموت الندى في سلة",
+      "required": false,
+      "value": null
     }
   ],
   "components": [

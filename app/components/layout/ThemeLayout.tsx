@@ -1,3 +1,4 @@
+import { FragranceFooter } from './FragranceFooter';
 import { useFragrancePreview } from '../product/FragranceCatalog';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
@@ -181,7 +182,7 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
             once the SDK is ready, which can be before a boundary hydrates, and some insert next
             to `.store-footer` (a "recently viewed" section on agran): inside a boundary still
             waiting, React found their nodes, failed to hydrate (React #418) and dropped them. */}
-        <Footer />
+        {fragrancePreview ? <FragranceFooter /> : <Footer />}
         <MobileBottomBar
           catalogPreview={fragrancePreview}
           navOpen={navOpen}

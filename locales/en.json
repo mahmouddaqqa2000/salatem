@@ -104,5 +104,14 @@
   "blocks.order_options.subtitle": "Choose from the available options.",
   "blocks.order_options.continue": "Continue",
   "blocks.order_options.total": "Total",
-  "blocks.order_options.required_message": "Please fill in the required fields"
+  "blocks.order_options.required_message": "Please fill in the required fields",
+  "fragrance.footer_intro": "Discover fragrances from warm woods to fresh citrus.",
+  "fragrance.all": "All fragrances",
+  "fragrance.woody": "Woody",
+  "fragrance.floral": "Floral",
+  "fragrance.citrus": "Citrus",
+  "fragrance.shopping": "Shopping",
+  "fragrance.cart": "Shopping bag",
+  "fragrance.orders": "My orders",
+  "fragrance.account": "My account"
 }

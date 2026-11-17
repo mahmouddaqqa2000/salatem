@@ -809,3 +809,176 @@ html.dark .app-inner:has(.showcase-block--hero) {
   font-size: 0.75rem;
   line-height: 1.6;
 }
+
+.fragrance-footer {
+  margin-block-start: 2rem;
+  padding-block: 2.5rem 6rem;
+  background: #291b2c;
+  color: #e8dde6;
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+
+    > div:first-child {
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr 1fr;
+
+      > div:first-child {
+        grid-column: auto;
+      }
+    }
+  }
+
+  &__brand {
+    display: inline-block;
+    margin-block-end: 0.75rem;
+    color: #fff8ef;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 25rem;
+    line-height: 1.9;
+    color: #d8c8d4;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  h2 {
+    margin-block-end: 0.75rem;
+    color: #edc8a2;
+    font-weight: 700;
+  }
+
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    color: #f1e7ee;
+  }
+
+  a:hover {
+    color: #edc8a2;
+  }
+
+  a:focus-visible {
+    outline: 2px solid #edc8a2;
+    outline-offset: 4px;
+  }
+
+  &__bottom {
+    margin-block-start: 2rem;
+    padding-block-start: 1.25rem;
+    border-block-start: 1px solid #ffffff26;
+    color: #ccb7c7;
+    font-size: 0.8rem;
+  }
+}
+
+.showcase-section--brands .showcase-card__copy {
+  display: grid;
+  place-items: center;
+  min-height: 4.5rem;
+  padding: 0.5rem;
+  color: #533653;
+  white-space: nowrap;
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+.showcase-section--brands {
+  border-block-end: 1px solid #e3d9cf;
+}
+
+@media (max-width: 767px) {
+  .fragrance-preview .site-header:not(.site-header--product) {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 45;
+    background: #fffaf3;
+    color: #533653;
+
+    .site-header__bar-outer {
+      min-height: 3.75rem;
+    }
+
+    .site-header__bar {
+      position: static;
+      height: auto;
+      overflow: visible;
+      visibility: visible;
+      background: #fffaf3;
+    }
+
+    .site-header__bar-inner {
+      min-height: 3.75rem;
+    }
+
+    .showcase-wordmark {
+      color: #533653;
+      font-size: 1.65rem;
+    }
+
+    .site-header__search {
+      display: inline-grid;
+      color: #533653;
+    }
+
+    .site-header__topnav,
+    .site-header__mainmenu,
+    .site-header__intro,
+    .site-header__bullet {
+      display: none;
+    }
+  }
+
+  .fragrance-preview .showcase-hero {
+    min-height: 24rem;
+    height: min(65svh, 30rem);
+    border-radius: 0 0 1.25rem 1.25rem;
+
+    &__copy {
+      padding: 1.5rem 1.25rem 3.75rem;
+
+      h2 {
+        font-size: clamp(1.7rem, 6.5vw, 2.4rem);
+      }
+
+      p {
+        max-width: 20rem;
+        margin-inline: auto;
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .app-inner.fragrance-preview:has(.showcase-block--hero) .site-header--home
+    .site-header__bar:not(.is-scrolled) {
+    .showcase-wordmark,
+    .site-header__search {
+      color: #533653;
+    }
+  }
+}

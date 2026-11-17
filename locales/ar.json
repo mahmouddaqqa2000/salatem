@@ -104,5 +104,14 @@
   "blocks.order_options.subtitle": "اختر من الخيارات المتاحة.",
   "blocks.order_options.continue": "متابعة",
   "blocks.order_options.total": "الإجمالي",
-  "blocks.order_options.required_message": "يرجى تعبئة الحقول المطلوبة"
+  "blocks.order_options.required_message": "يرجى تعبئة الحقول المطلوبة",
+  "fragrance.footer_intro": "عطور بين دفء الأخشاب ونضارة الحمضيات. اكتشف رائحتك من مجموعة سلاتم.",
+  "fragrance.all": "كل العطور",
+  "fragrance.woody": "خشبية",
+  "fragrance.floral": "زهرية",
+  "fragrance.citrus": "حمضية",
+  "fragrance.shopping": "التسوّق",
+  "fragrance.cart": "حقيبة التسوّق",
+  "fragrance.orders": "طلباتي",
+  "fragrance.account": "حسابي"
 }

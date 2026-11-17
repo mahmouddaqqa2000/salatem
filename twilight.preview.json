@@ -22,6 +22,32 @@
       }
     },
     {
+      "id": "salatem-signatures",
+      "path": "showcase-section",
+      "fields": {
+        "key": "4c766ed8-f899-4db8-bf06-9af53cc1330b",
+        "layout": "brands",
+        "items": [
+          {
+            "title": "ليل العود",
+            "description": "SALATEM"
+          },
+          {
+            "title": "ياسمين السحر",
+            "description": "SALATEM"
+          },
+          {
+            "title": "ورد الرمال",
+            "description": "SALATEM"
+          },
+          {
+            "title": "برغموت الندى",
+            "description": "SALATEM"
+          }
+        ]
+      }
+    },
+    {
       "id": "salatem-2",
       "path": "showcase-section",
       "fields": {

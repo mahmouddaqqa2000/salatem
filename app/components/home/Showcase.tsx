@@ -34,11 +34,9 @@ function Action({ data }: { data: ShowcaseData }) {
 }
 
 export function ShowcaseHero({ data }: { data: ShowcaseData }) {
-  const { t } = useTranslation();
   const motionAllowed = useMotionAllowed();
-  const [paused, setPaused] = useState(false);
   if (!data.video && !data.image) return null;
-  const play = motionAllowed && !paused && Boolean(data.video);
+  const play = motionAllowed && Boolean(data.video);
 
   return (
     <div className="showcase-hero">
@@ -56,11 +54,7 @@ export function ShowcaseHero({ data }: { data: ShowcaseData }) {
           <Action data={data} />
         </div>
       )}
-      {motionAllowed && data.video && (
-        <button type="button" className="showcase-hero__motion" onClick={() => setPaused(!paused)}>
-          {paused ? t('showcase.play', 'Play video') : t('showcase.pause', 'Pause video')}
-        </button>
-      )}
+
     </div>
   );
 }
@@ -109,20 +103,14 @@ function ShowcaseCards({ items, duplicate = false }: { items: ShowcaseItem[]; du
 }
 
 function BrandMarquee({ items }: { items: ShowcaseItem[] }) {
-  const { t } = useTranslation();
-  const [paused, setPaused] = useState(false);
-
   if (items.length < 2) return <ShowcaseCards items={items} />;
 
   return (
-    <div className="showcase-brands" data-paused={paused}>
+    <div className="showcase-brands">
       <div className="showcase-brands__track" dir="ltr">
         <ShowcaseCards items={items} />
         <ShowcaseCards items={items} duplicate />
       </div>
-      <button type="button" className="showcase-brands__toggle" onClick={() => setPaused((value) => !value)}>
-        {paused ? t('showcase.brands_resume', 'Resume logos') : t('showcase.brands_pause', 'Pause logos')}
-      </button>
     </div>
   );
 }

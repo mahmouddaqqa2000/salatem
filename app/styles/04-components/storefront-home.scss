@@ -569,16 +569,7 @@ html.dark .app-inner:has(.showcase-block--hero) {
     }
   }
 
-  &[data-paused='true'] .showcase-cards {
-    animation-play-state: paused;
-  }
 
-  &__toggle {
-    min-height: 2rem;
-    padding-inline: 0.5rem;
-    font-size: 0.75rem;
-    text-decoration: underline;
-  }
 }
 
 @keyframes showcase-brand-scroll {
@@ -589,7 +580,6 @@ html.dark .app-inner:has(.showcase-block--hero) {
 
 @media (prefers-reduced-motion: reduce) {
   .showcase-brands {
-    &__toggle,
     .showcase-cards[inert] {
       display: none;
     }
@@ -810,82 +800,6 @@ html.dark .app-inner:has(.showcase-block--hero) {
   line-height: 1.6;
 }
 
-.fragrance-footer {
-  margin-block-start: 2rem;
-  padding-block: 2.5rem 6rem;
-  background: #291b2c;
-  color: #e8dde6;
-
-  &__columns {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
-
-    > div:first-child {
-      grid-column: 1 / -1;
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: 2fr 1fr 1fr;
-
-      > div:first-child {
-        grid-column: auto;
-      }
-    }
-  }
-
-  &__brand {
-    display: inline-block;
-    margin-block-end: 0.75rem;
-    color: #fff8ef;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  p {
-    max-width: 25rem;
-    line-height: 1.9;
-    color: #d8c8d4;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  h2 {
-    margin-block-end: 0.75rem;
-    color: #edc8a2;
-    font-weight: 700;
-  }
-
-  nav a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.75rem;
-    color: #f1e7ee;
-  }
-
-  a:hover {
-    color: #edc8a2;
-  }
-
-  a:focus-visible {
-    outline: 2px solid #edc8a2;
-    outline-offset: 4px;
-  }
-
-  &__bottom {
-    margin-block-start: 2rem;
-    padding-block-start: 1.25rem;
-    border-block-start: 1px solid #ffffff26;
-    color: #ccb7c7;
-    font-size: 0.8rem;
-  }
-}
-
 .showcase-section--brands .showcase-card__copy {
   display: grid;
   place-items: center;
@@ -980,5 +894,78 @@ html.dark .app-inner:has(.showcase-block--hero) {
     .site-header__search {
       color: #533653;
     }
+  }
+}
+
+.showcase-brands__track .showcase-cards {
+  gap: 1rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+
+  > li {
+    display: grid;
+    place-items: center;
+    flex-basis: clamp(5.5rem, 10vw, 7.25rem);
+    width: clamp(5.5rem, 10vw, 7.25rem);
+    aspect-ratio: 1;
+    border: 1px solid #dfd0dc;
+    border-radius: 50%;
+    background: #fffaf3;
+    box-shadow: 0 3px 12px #5336530a;
+  }
+
+  .showcase-card__copy {
+    min-height: 0;
+    padding: 0.35rem;
+    white-space: normal;
+    text-align: center;
+
+    h3 {
+      font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+    }
+  }
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.fragrance-preview .store-footer:not(.store-footer--sheet) {
+  background: #291b2c;
+  color: #eadde6;
+  margin-block-start: 2rem;
+  padding-block-end: 5.5rem;
+
+  > .store-footer__inner {
+    display: block;
+    background: transparent;
+    border-color: #ffffff26;
+  }
+
+  > .store-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  :is(h3, h4) {
+    color: #edc8a2;
+  }
+
+  :is(p, .copyright-text, .s-menu-footer-item, .store-footer__contacts a) {
+    color: #eadde6;
+  }
+
+  a:hover {
+    color: #edc8a2;
+  }
+
+  .social-link {
+    color: #eadde6;
+    border-color: #ffffff40;
+  }
+
+  @media (min-width: 768px) {
+    padding-block-end: 0;
   }
 }

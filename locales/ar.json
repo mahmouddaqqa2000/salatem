@@ -113,5 +113,8 @@
   "fragrance.shopping": "التسوّق",
   "fragrance.cart": "حقيبة التسوّق",
   "fragrance.orders": "طلباتي",
-  "fragrance.account": "حسابي"
+  "fragrance.account": "حسابي",
+  "fragrance.load_error": "تعذّر تحميل المنتجات.",
+  "fragrance.retry": "إعادة المحاولة",
+  "fragrance.empty": "لا توجد منتجات متاحة حاليًا."
 }

@@ -9,8 +9,8 @@ function CollectionPage() {
 }
 
 export const Route = createFileRoute('/{-$locale}/collections/$family')({
-  beforeLoad: () => {
-    if (!import.meta.env.DEV) throw notFound();
+  beforeLoad: ({ params }) => {
+    if (!['all', 'woody', 'floral', 'citrus'].includes(params.family)) throw notFound();
   },
   loader: ({ params }) => ({
     page: { title: fragranceFamilyName(params.family, params.locale) },

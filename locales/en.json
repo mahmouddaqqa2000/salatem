@@ -113,5 +113,8 @@
   "fragrance.shopping": "Shopping",
   "fragrance.cart": "Shopping bag",
   "fragrance.orders": "My orders",
-  "fragrance.account": "My account"
+  "fragrance.account": "My account",
+  "fragrance.load_error": "Products could not be loaded.",
+  "fragrance.retry": "Try again",
+  "fragrance.empty": "No products are available yet."
 }

@@ -1,3 +1,4 @@
+import { FragranceHomeCatalog } from './components/product/FragranceCatalog';
 import { lazy } from 'react';
 import { createRouter } from '@salla.sa/twilight-theme-engine/tanstack';
 import { registry } from '@salla.sa/twilight-theme-engine';
@@ -44,6 +45,7 @@ registry.register('product:list-skeleton', ProductListSkeleton);
 
 registerHomeComponents({
   ...DefaultHomeComponents,
+  'fragrance-catalog': FragranceHomeCatalog,
   'showcase-hero': ShowcaseHero,
   'showcase-section': ShowcaseSection,
   brands: Brands,

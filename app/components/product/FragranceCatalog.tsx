@@ -1,6 +1,7 @@
-import { useId, useState } from 'react';
-import { SallaAddProductButton } from '@salla.sa/twilight-components-react/add-product-button';
-import { ShoppingBagIcon } from '../icons';
+import { useQuery } from '@tanstack/react-query';
+import { product } from '@salla.sa/twilight-theme-engine/api/product';
+import { ProductCardSkeleton } from '@salla.sa/twilight-theme-engine/common';
+import { ProductCard } from './ProductCard';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
 import { useTwilight } from '@salla.sa/twilight-theme-engine/providers';
@@ -22,8 +23,7 @@ const fragrances = [
 export function useFragrancePreview() {
   const { theme } = useTwilight();
   const settings = theme?.settings;
-  return Boolean(import.meta.env.DEV && settings &&
-    'fragrance_preview' in settings && settings.fragrance_preview === true);
+  return Boolean(settings && 'fragrance_preview' in settings && settings.fragrance_preview === true);
 }
 
 export function fragranceFamilyName(family: string, locale: string | undefined) {
@@ -31,50 +31,26 @@ export function fragranceFamilyName(family: string, locale: string | undefined) 
   return selected.name[locale === 'ar' || !locale ? 'ar' : 'en'];
 }
 
-function FragranceCartButton({ id, name }: { id: string; name: string }) {
-  const { t } = useTranslation();
-  const { theme } = useTwilight();
-  const [showNotice, setShowNotice] = useState(false);
-  const noticeId = useId();
-  const settings = theme?.settings as Record<string, unknown> | undefined;
-  const rawId = settings?.[`fragrance_product_${id}`];
-  const productId = typeof rawId === 'string' || typeof rawId === 'number' ? Number(rawId) : 0;
-  const label = t('fragrance.add_to_cart', 'Add to cart');
-
-  return (
-    <div className="fragrance-catalog__purchase">
-      {Number.isSafeInteger(productId) && productId > 0 ? (
-        <SallaAddProductButton productId={productId} productStatus="sale"
-          productType="product" quantity={1} width="wide" fill="solid">
-          <ShoppingBagIcon aria-hidden="true" />
-          <span>{label}</span>
-        </SallaAddProductButton>
-      ) : (
-        <button type="button" className="fragrance-catalog__add"
-          aria-label={`${label} — ${name}`}
-          aria-describedby={showNotice ? noticeId : undefined}
-          onClick={() => setShowNotice(true)}>
-          <ShoppingBagIcon aria-hidden="true" />
-          <span>{label}</span>
-        </button>
-      )}
-      {showNotice && (
-        <p id={noticeId} role="status" className="fragrance-catalog__notice">
-          {t('fragrance.link_required', 'This preview item needs to be linked to a Salla product before it can be purchased.')}
-        </p>
-      )}
-    </div>
-  );
-}
-
 export function FragranceCatalog({ family = 'all', home = false }: { family?: string; home?: boolean }) {
   const { locale, t } = useTranslation();
   const language = locale === 'ar' ? 'ar' : 'en';
   const selected = families.find((entry) => entry.id === family) ?? families[0];
-  const items = selected.id === 'all'
-    ? fragrances
-    : fragrances.filter((item) => item.family === selected.id);
-  const title = home ? t('fragrance.collection', 'Salatem collection') : fragranceFamilyName(family, locale);
+  const { theme } = useTwilight();
+  const settings = theme?.settings as Record<string, unknown> | undefined;
+  const selectedIds = fragrances
+    .filter((item) => selected.id === 'all' || item.family === selected.id)
+    .map((item) => Number(settings?.[`fragrance_product_${item.id}`]))
+    .filter((id) => Number.isSafeInteger(id) && id > 0);
+  const configured = selectedIds.length > 0;
+  const { data: result, isPending, isError, refetch } = useQuery(
+    product.queries.list({
+      source: configured ? 'selected' : 'latest',
+      ...(configured ? { sourceValue: selectedIds } : {}),
+      perPage: 12,
+    })
+  );
+  const items = result?.items ?? [];
+  const title = home || !configured ? t('fragrance.collection', 'Salatem collection') : fragranceFamilyName(family, locale);
   const Heading = home ? 'h2' : 'h1';
 
   return (
@@ -88,18 +64,26 @@ export function FragranceCatalog({ family = 'all', home = false }: { family?: st
           </Link>
         ))}
       </nav>
-      <ul className="fragrance-catalog__grid">
-        {items.map((item) => (
-          <li key={item.id}>
-            <img src={`/salatem/${item.id}.jpg`} alt="" width="600" height="600" loading="lazy" />
-            <div className="fragrance-catalog__info">
-              <h3>{item.name[language]}</h3>
-              <p>{item.notes[language]}</p>
-            </div>
-            <FragranceCartButton id={item.id} name={item.name[language]} />
-          </li>
-        ))}
-      </ul>
+      {isError ? (
+        <div role="status">
+          <p>{t('fragrance.load_error', 'Products could not be loaded.')}</p>
+          <button type="button" onClick={() => refetch()}>{t('fragrance.retry', 'Try again')}</button>
+        </div>
+      ) : (
+        <div className="fragrance-catalog__products s-products-list-wrapper s-products-list-vertical-cards">
+          {isPending
+            ? Array.from({ length: 4 }, (_, index) => <ProductCardSkeleton key={index} />)
+            : items.map((item) => <ProductCard key={item.id} product={item} layout="vertical" />)}
+        </div>
+      )}
+      {!isPending && !isError && !items.length && (
+        <p role="status">{t('fragrance.empty', 'No products are available yet.')}</p>
+      )}
+
     </section>
   );
+}
+
+export function FragranceHomeCatalog() {
+  return <FragranceCatalog home />;
 }

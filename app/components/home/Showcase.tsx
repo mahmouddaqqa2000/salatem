@@ -1,3 +1,4 @@
+import { salatemAsset } from '../../lib/salatemAssets';
 import { useId, useState } from 'react';
 import { Link } from '@salla.sa/twilight-theme-engine/common';
 import { useTranslation } from '@salla.sa/twilight-theme-engine/i18n';
@@ -40,11 +41,11 @@ export function ShowcaseHero({ data }: { data: ShowcaseData }) {
 
   return (
     <div className="showcase-hero">
-      {data.image && <img src={data.image} alt="" fetchPriority="high" />}
+      {data.image && <img src={salatemAsset(data.image)} alt="" width="1440" height="810" fetchPriority="high" />}
       {play && (
-        <video autoPlay loop muted playsInline preload="metadata" poster={data.image} aria-hidden="true">
-          {data.mobile_video && <source src={data.mobile_video} media="(max-width: 640px)" type="video/mp4" />}
-          <source src={data.video} type="video/mp4" />
+        <video autoPlay loop muted playsInline preload="metadata" poster={salatemAsset(data.image)} aria-hidden="true">
+          {data.mobile_video && <source src={salatemAsset(data.mobile_video)} media="(max-width: 640px)" type="video/mp4" />}
+          <source src={salatemAsset(data.video)} type="video/mp4" />
         </video>
       )}
       {(data.title || data.description || data.button) && (
@@ -66,8 +67,8 @@ function Comparison({ before, after }: { before: string; after: string }) {
   return (
     <div className="showcase-comparison">
       <div className="showcase-comparison__images">
-        <img src={before} alt={t('showcase.before', 'Before')} loading="lazy" />
-        <img src={after} alt={t('showcase.after', 'After')} loading="lazy"
+        <img src={salatemAsset(before)} alt={t('showcase.before', 'Before')} width="1200" height="675" loading="lazy" />
+        <img src={salatemAsset(after)} alt={t('showcase.after', 'After')} width="1200" height="675" loading="lazy"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }} />
       </div>
       <label className="sr-only" htmlFor={id}>{t('showcase.compare', 'Compare the two images')}</label>
@@ -83,7 +84,7 @@ function ShowcaseCards({ items, duplicate = false }: { items: ShowcaseItem[]; du
       {items.map((item, index) => {
         const content = (
           <>
-            {item.image && <img src={item.image} alt={item.title ?? ''} loading="lazy" decoding="async" />}
+            {item.image && <img src={salatemAsset(item.image)} alt={item.title ?? ''} width="600" height="600" loading="lazy" decoding="async" />}
             {(item.title || item.description) && (
               <div className="showcase-card__copy">
                 {item.title && <h3>{item.title}</h3>}
@@ -140,8 +141,8 @@ export function ShowcaseSection({ data }: { data: ShowcaseData }) {
       {layout === 'compare' && data.image && data.second_image ? (
         <Comparison before={data.image} after={data.second_image} />
       ) : data.video ? (
-        <video controls playsInline preload="none" poster={data.image} src={data.video} />
-      ) : data.image && <img className="showcase-section__image" src={data.image} alt="" loading="lazy" />}
+        <video controls playsInline preload="none" poster={salatemAsset(data.image)} src={salatemAsset(data.video)} />
+      ) : data.image && <img className="showcase-section__image" src={salatemAsset(data.image)} alt="" width="1200" height="900" loading="lazy" />}
       {layout === 'faq' ? items.map((item, index) => (
         <details key={`${item.title}-${index}`}><summary>{item.title}</summary><p>{item.description}</p></details>
       )) : layout === 'brands' && items.length > 0 ? (

@@ -121,7 +121,7 @@ describe('ThemeLayout product card image ratio', () => {
       options: { value: string }[];
       selected: { value: string }[];
     };
-    expect(setting.selected[0].value).toBe('auto');
+    expect(setting.selected[0].value).toBe('square');
     expect(setting.options.map((option) => option.value)).toEqual([
       'auto',
       'square',

@@ -161,6 +161,9 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
     return lang.subscribe(() => fillComponentTranslations(lang, themeTranslations));
   }, []);
 
+  const settings = theme?.settings as { showcase_wordmark?: unknown } | undefined;
+  const salatemBrand = typeof settings?.showcase_wordmark === 'string'
+    && settings.showcase_wordmark.trim() === 'سلاتم';
   const imgRatio = productImageRatio(theme?.settings?.product_card_img_ratio);
   const squarePhotos = squarePhotosCover(theme?.settings?.squar_photo_bg_image_size)
     ? ' square-photos--cover'
@@ -169,7 +172,7 @@ export function ThemeLayout({ children }: ThemeLayoutProps) {
   return (
     <>
       <div
-        className={`app-inner flex flex-col min-h-full product-card-img--${imgRatio}${squarePhotos}${fragrancePreview ? ' fragrance-preview' : ''}`}
+        className={`app-inner flex flex-col min-h-full product-card-img--${imgRatio}${squarePhotos}${fragrancePreview || salatemBrand ? ' fragrance-preview' : ''}`}
         suppressHydrationWarning
       >
         <Header catalogPreview={fragrancePreview} navOpen={navOpen} onNavOpenChange={setNavOpen} />

@@ -1,3 +1,5 @@
+import cairoCssUrl from '../../public/fonts/cairo/cairo.css?url';
+import plexCssUrl from '../../public/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic.css?url';
 import { lazy, Suspense } from 'react';
 import { Scripts, Outlet } from '@tanstack/react-router';
 import { TwilightProvider } from '@salla.sa/twilight-theme-engine';
@@ -45,8 +47,8 @@ function RootComponent() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {ctx.locale === 'ar' && (
           <>
-            <link rel="stylesheet" href="/fonts/cairo/cairo.css" />
-            <link rel="stylesheet" href="/fonts/ibm-plex-sans-arabic/ibm-plex-sans-arabic.css" />
+            <link rel="stylesheet" href={cairoCssUrl} />
+            <link rel="stylesheet" href={plexCssUrl} />
           </>
         )}
         {/* Home and product paint from inline critical CSS; `bootClient` adds the full sheet once
